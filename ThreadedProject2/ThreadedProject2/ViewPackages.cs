@@ -8,16 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-/**
- * SchoolProject: OOSD 2019 CPRG 200
- * Author: Eugenia Chiu
- * Date: Jan 2019
- * 
- * */
-
 namespace ThreadedProject2
 {
-    //Packages Page Load
     public partial class ViewPackages : Form
     {
         public ViewPackages()
@@ -29,8 +21,6 @@ namespace ThreadedProject2
         {
 
         }
-
-        //Back Button click
         private void btnBack_Click(object sender, EventArgs e)
         { 
            
@@ -38,7 +28,6 @@ namespace ThreadedProject2
             
         }
 
-        //Exit button click
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
