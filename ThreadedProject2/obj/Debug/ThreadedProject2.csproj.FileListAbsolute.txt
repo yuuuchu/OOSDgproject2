@@ -42,3 +42,4 @@ C:\Users\784536\VS\OOSD2\OOSDgproject2\ThreadedProject2\bin\Debug\DBClasses.dll
 C:\Users\784536\VS\OOSD2\OOSDgproject2\ThreadedProject2\bin\Debug\DBClasses.pdb
 C:\Users\784536\VS\OOSD2\OOSDgproject2\ThreadedProject2\obj\Debug\ThreadedProject2.csproj.CopyComplete
 C:\Users\784536\VS\OOSD2\OOSDgproject2\ThreadedProject2\obj\Debug\ThreadedProject2.ConnectionSetup.resources
+C:\Users\784536\VS\OOSD2\OOSDgproject2\ThreadedProject2\obj\Debug\ThreadedProject2.AddSuppliers.resources

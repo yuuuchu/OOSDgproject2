@@ -31,8 +31,8 @@
 			this.lblPackages = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.lblSelectSuppliers = new System.Windows.Forms.Label();
-			this.comboBoxSupplier = new System.Windows.Forms.ComboBox();
-			this.lstProducts = new System.Windows.Forms.ListBox();
+			this.comboBoxProducts = new System.Windows.Forms.ComboBox();
+			this.lstSuppliers = new System.Windows.Forms.ListBox();
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.btnRemove = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -73,8 +73,8 @@
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.lblSelectSuppliers);
-			this.groupBox1.Controls.Add(this.comboBoxSupplier);
-			this.groupBox1.Controls.Add(this.lstProducts);
+			this.groupBox1.Controls.Add(this.comboBoxProducts);
+			this.groupBox1.Controls.Add(this.lstSuppliers);
 			this.groupBox1.Location = new System.Drawing.Point(12, 54);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(311, 431);
@@ -88,27 +88,27 @@
 			this.lblSelectSuppliers.ForeColor = System.Drawing.Color.Khaki;
 			this.lblSelectSuppliers.Location = new System.Drawing.Point(73, 12);
 			this.lblSelectSuppliers.Name = "lblSelectSuppliers";
-			this.lblSelectSuppliers.Size = new System.Drawing.Size(164, 28);
+			this.lblSelectSuppliers.Size = new System.Drawing.Size(159, 28);
 			this.lblSelectSuppliers.TabIndex = 5;
-			this.lblSelectSuppliers.Text = "Select Supplier";
+			this.lblSelectSuppliers.Text = "Select Product";
 			// 
-			// comboBoxSupplier
+			// comboBoxProducts
 			// 
-			this.comboBoxSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBoxSupplier.FormattingEnabled = true;
-			this.comboBoxSupplier.Location = new System.Drawing.Point(7, 43);
-			this.comboBoxSupplier.Name = "comboBoxSupplier";
-			this.comboBoxSupplier.Size = new System.Drawing.Size(298, 21);
-			this.comboBoxSupplier.TabIndex = 1;
-			this.comboBoxSupplier.SelectedValueChanged += new System.EventHandler(this.SelectValChanged);
+			this.comboBoxProducts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxProducts.FormattingEnabled = true;
+			this.comboBoxProducts.Location = new System.Drawing.Point(7, 43);
+			this.comboBoxProducts.Name = "comboBoxProducts";
+			this.comboBoxProducts.Size = new System.Drawing.Size(298, 21);
+			this.comboBoxProducts.TabIndex = 1;
+			this.comboBoxProducts.SelectedValueChanged += new System.EventHandler(this.SelectValChanged);
 			// 
-			// lstProducts
+			// lstSuppliers
 			// 
-			this.lstProducts.FormattingEnabled = true;
-			this.lstProducts.Location = new System.Drawing.Point(6, 69);
-			this.lstProducts.Name = "lstProducts";
-			this.lstProducts.Size = new System.Drawing.Size(299, 355);
-			this.lstProducts.TabIndex = 0;
+			this.lstSuppliers.FormattingEnabled = true;
+			this.lstSuppliers.Location = new System.Drawing.Point(6, 69);
+			this.lstSuppliers.Name = "lstSuppliers";
+			this.lstSuppliers.Size = new System.Drawing.Size(299, 355);
+			this.lstSuppliers.TabIndex = 0;
 			// 
 			// btnAdd
 			// 
@@ -120,7 +120,6 @@
 			this.btnAdd.TabIndex = 20;
 			this.btnAdd.Text = ">>";
 			this.btnAdd.UseVisualStyleBackColor = false;
-			this.btnAdd.Click += new System.EventHandler(this.btnBack_Click);
 			// 
 			// btnRemove
 			// 
@@ -350,8 +349,8 @@
         private System.Windows.Forms.Label lblPackages;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblSelectSuppliers;
-        private System.Windows.Forms.ComboBox comboBoxSupplier;
-        private System.Windows.Forms.ListBox lstProducts;
+        private System.Windows.Forms.ComboBox comboBoxProducts;
+        private System.Windows.Forms.ListBox lstSuppliers;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -372,5 +371,5 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnMainMenu;
-    }
+	}
 }
