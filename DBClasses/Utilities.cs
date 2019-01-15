@@ -18,7 +18,6 @@ Hayden Belanger
 namespace DBClasses {
 	public class Utilities {
 
-
 		//Serializes any SERIALIZABLE object into binary into a file specified.
 		public static void SerializeObject(object obj, string location) {
 
