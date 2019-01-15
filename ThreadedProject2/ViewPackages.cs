@@ -12,14 +12,38 @@ namespace ThreadedProject2
 {
     public partial class ViewPackages : Form
     {
+
         public ViewPackages()
         {
             InitializeComponent();
         }
 
+        private Packages packages;
+
+        private void GetPackages(int packID)
+        {
+            try
+            {
+                packages = PackagesDB.GetPackages(packID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
+        }
+
+        private void DisplayPackages()
+        {
+            txtName.Text = packages.PkgName;
+            txtSDate.Text = packages.PkgStartDate.ToString();
+            txtPrice.Text = packages.PkgBasePrice.ToString();
+            richTextBox1.Text = packages.PkgDesc;
+
+        }
+
         private void ViewPackages_Load(object sender, EventArgs e)
         {
-
+            
         }
         private void btnBack_Click(object sender, EventArgs e)
         { 
@@ -31,6 +55,30 @@ namespace ThreadedProject2
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // bind combo box
+
+            var packageIDs = "SELECT PackageId FROM Packages WHERE PackageId = @PackageId";
+
+            comboBox1.DataSource = packageIDs;
+
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            
+            //this.GetPackages(packID);
+            this.DisplayPackages();
+
         }
     }
 }
