@@ -31,5 +31,9 @@ namespace ThreadedProject2
         {
             Application.Exit();
         }
-    }
+
+		private void btnAddPackages_Click(object sender, EventArgs e) {
+			new Add_CreatePackages().ShowDialog(this);
+		}
+	}
 }
