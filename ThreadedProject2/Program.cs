@@ -1,0 +1,67 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using DBClasses;
+
+namespace ThreadedProject2
+{
+    static class Program
+    {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+
+			Application.EnableVisualStyles();
+			Application.SetCompatibleTextRenderingDefault(false);
+
+			System.IO.Directory.CreateDirectory(Path.GetDirectoryName(ConnectionSetup.DataPath));
+			try {
+
+				//If the program can find a serialized ConnectionString, tries to use it. If it either
+				//fails to find a serialized connection string or can't connect to the database using it, will direct to
+				//the setup window. Otherwise, is directed to the main window.
+				string precs = Utilities.DeserializeObject<string>(ConnectionSetup.DataPath);
+				using (SqlConnection con = new SqlConnection(precs)) {
+					try {
+						con.Open();
+						ConnectionSetup.ConnectionString = precs;
+
+					} catch (SqlException e) {
+						MessageBox.Show("Error while connecting to SQL:\n" + e.Message, "Connection Error");
+						Application.Run(new ConnectionSetup(LaunchProgram));
+						return;
+					}
+				}
+
+
+			} catch (FileNotFoundException) {
+
+				Application.Run(new ConnectionSetup(LaunchProgram));
+				return;
+			} catch (Exception) {
+				Application.Run(new ConnectionSetup(LaunchProgram));
+				return;
+			}
+
+			Application.Run(new MainMenu());
+
+
+		}
+
+		public static void LaunchProgram(Form f) {
+
+			f.Hide();
+			Form f2 = new MainMenu();
+			f2.FormClosed += (s, args) => f.Close();
+			f2.Show();
+
+		}
+	}
+}
