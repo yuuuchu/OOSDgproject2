@@ -19,25 +19,12 @@ namespace ThreadedProject2
 
         private void btnViewPackages_Click(object sender, EventArgs e)
         {
-            ViewPackages viewPackages = new ViewPackages();
-            viewPackages.Show();
-            this.Hide();
-
-            viewPackages.FormClosing += backButton;
+			new ViewPackages().ShowDialog(this);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ViewSuppliers viewSuppliers = new ViewSuppliers();
-            viewSuppliers.Show();
-            this.Hide();
-
-            viewSuppliers.FormClosing += backButton;
-        }
-
-        private void backButton (object sender, FormClosingEventArgs e)
-        {
-            this.Show();
+			new ViewSuppliers().ShowDialog(this);
         }
 
         private void button2_Click(object sender, EventArgs e)
