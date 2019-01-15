@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewPackages));
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -45,8 +46,7 @@
             this.lblViewPackages = new System.Windows.Forms.Label();
             this.lstPackageProducts = new System.Windows.Forms.ListBox();
             this.lblPackages = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.lstViewPackages = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -62,9 +62,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Search : ";
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(122, 23);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(247, 35);
+            this.textBox1.TabIndex = 1;
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnBack);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -72,6 +80,7 @@
             this.groupBox1.Controls.Add(this.lblViewPackages);
             this.groupBox1.Controls.Add(this.lstPackageProducts);
             this.groupBox1.Controls.Add(this.lblPackages);
+            this.groupBox1.Controls.Add(this.lstViewPackages);
             this.groupBox1.Location = new System.Drawing.Point(3, -4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(794, 454);
@@ -104,7 +113,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.btnSearch);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.textBox3);
@@ -112,6 +120,7 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.lblPackageName);
+            this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(8, 76);
             this.groupBox2.Name = "groupBox2";
@@ -195,7 +204,7 @@
             this.lblViewProducts.AutoSize = true;
             this.lblViewProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViewProducts.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblViewProducts.Location = new System.Drawing.Point(413, 274);
+            this.lblViewProducts.Location = new System.Drawing.Point(619, 51);
             this.lblViewProducts.Name = "lblViewProducts";
             this.lblViewProducts.Size = new System.Drawing.Size(153, 20);
             this.lblViewProducts.TabIndex = 6;
@@ -206,11 +215,11 @@
             this.lblViewPackages.AutoSize = true;
             this.lblViewPackages.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViewPackages.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblViewPackages.Location = new System.Drawing.Point(413, 82);
+            this.lblViewPackages.Location = new System.Drawing.Point(465, 50);
             this.lblViewPackages.Name = "lblViewPackages";
-            this.lblViewPackages.Size = new System.Drawing.Size(89, 20);
+            this.lblViewPackages.Size = new System.Drawing.Size(79, 20);
             this.lblViewPackages.TabIndex = 5;
-            this.lblViewPackages.Text = "Description";
+            this.lblViewPackages.Text = "Packages";
             // 
             // lstPackageProducts
             // 
@@ -218,9 +227,9 @@
             this.lstPackageProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstPackageProducts.FormattingEnabled = true;
             this.lstPackageProducts.ItemHeight = 16;
-            this.lstPackageProducts.Location = new System.Drawing.Point(417, 297);
+            this.lstPackageProducts.Location = new System.Drawing.Point(613, 76);
             this.lstPackageProducts.Name = "lstPackageProducts";
-            this.lstPackageProducts.Size = new System.Drawing.Size(342, 116);
+            this.lstPackageProducts.Size = new System.Drawing.Size(170, 340);
             this.lstPackageProducts.TabIndex = 4;
             // 
             // lblPackages
@@ -234,22 +243,16 @@
             this.lblPackages.TabIndex = 3;
             this.lblPackages.Text = "Packages";
             // 
-            // comboBox1
+            // lstViewPackages
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(116, 29);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(253, 32);
-            this.comboBox1.TabIndex = 16;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(417, 105);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(342, 158);
-            this.richTextBox1.TabIndex = 19;
-            this.richTextBox1.Text = "";
+            this.lstViewPackages.BackColor = System.Drawing.Color.DarkGray;
+            this.lstViewPackages.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstViewPackages.FormattingEnabled = true;
+            this.lstViewPackages.ItemHeight = 16;
+            this.lstViewPackages.Location = new System.Drawing.Point(420, 76);
+            this.lstViewPackages.Name = "lstViewPackages";
+            this.lstViewPackages.Size = new System.Drawing.Size(180, 340);
+            this.lstViewPackages.TabIndex = 2;
             // 
             // ViewPackages
             // 
@@ -274,7 +277,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ListBox lstViewPackages;
         private System.Windows.Forms.Label lblPackages;
         private System.Windows.Forms.ListBox lstPackageProducts;
         private System.Windows.Forms.Button btnSearch;
@@ -289,7 +294,5 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
