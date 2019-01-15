@@ -122,8 +122,9 @@
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.btnAddPackages);
 			this.Controls.Add(this.btnViewPackages);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
 			this.Name = "MainMenu";
 			this.Text = "Main Menu";
 			this.ResumeLayout(false);
