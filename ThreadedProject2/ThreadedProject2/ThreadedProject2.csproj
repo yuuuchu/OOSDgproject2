@@ -52,6 +52,12 @@
     <Compile Include="Add_CreatePackages.Designer.cs">
       <DependentUpon>Add_CreatePackages.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateNewPackage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewPackage.Designer.cs">
+      <DependentUpon>CreateNewPackage.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     </Compile>
     <EmbeddedResource Include="Add_CreatePackages.resx">
       <DependentUpon>Add_CreatePackages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateNewPackage.resx">
+      <DependentUpon>CreateNewPackage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
