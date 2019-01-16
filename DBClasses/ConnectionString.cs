@@ -4,6 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/**
+ * Project: OOSD Threaded Project 2
+* Connection String class to establish connection
+* Author: Hayden Belanger
+* Date: Jan 2019
+* Commenter: Eugenia Chiu
+*/
+
 namespace ThreadedProject2
 {
     [Serializable]
