@@ -10,3 +10,9 @@ C:\Users\784536\VS\OOSD2\OOSDgproject2\DBClasses\obj\Debug\DBClasses.csprojAssem
 C:\Users\784536\VS\OOSD2\OOSDgproject2\DBClasses\obj\Debug\DBClasses.csproj.CoreCompileInputs.cache
 C:\Users\784536\VS\OOSD2\OOSDgproject2\DBClasses\obj\Debug\DBClasses.dll
 C:\Users\784536\VS\OOSD2\OOSDgproject2\DBClasses\obj\Debug\DBClasses.pdb
+C:\Users\806214\Documents\project2\OOSDgproject2\OOSDgproject2\DBClasses\bin\Debug\DBClasses.dll
+C:\Users\806214\Documents\project2\OOSDgproject2\OOSDgproject2\DBClasses\bin\Debug\DBClasses.pdb
+C:\Users\806214\Documents\project2\OOSDgproject2\OOSDgproject2\DBClasses\obj\Debug\DBClasses.csprojAssemblyReference.cache
+C:\Users\806214\Documents\project2\OOSDgproject2\OOSDgproject2\DBClasses\obj\Debug\DBClasses.csproj.CoreCompileInputs.cache
+C:\Users\806214\Documents\project2\OOSDgproject2\OOSDgproject2\DBClasses\obj\Debug\DBClasses.dll
+C:\Users\806214\Documents\project2\OOSDgproject2\OOSDgproject2\DBClasses\obj\Debug\DBClasses.pdb
