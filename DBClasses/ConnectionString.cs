@@ -4,32 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/**
- * Project: OOSD Threaded Project 2
-* Connection String class to establish connection with database
-* Author: Hayden Belanger
-* Date: Jan 2019
-* Commenter: Eugenia Chiu
-*/
+namespace ThreadedProject2
+{
+    [Serializable]
+    public class ConnectionString
+    {
 
+        public static ConnectionString Connection;
 
-namespace DBClasses {
-	[Serializable] //Serializable: for writing to binary file
+        private readonly string _cs;
 
-    //Connection String class
-	public class ConnectionString {
+        public ConnectionString(string ConnectionString)
+        {
 
-		public static ConnectionString Connection;
-		private readonly string _cs; //makes read only string
+            this._cs = ConnectionString;
+        }
 
-        //Make connection string, passing it a connection string parameter
-		public ConnectionString(string ConnectionString) { 
-			this._cs = ConnectionString;
-		}
-
-        //Returns the connection string value for use
-		public string Value() {
-			return _cs;
-		}
-	}
+        public string Value()
+        {
+            return _cs;
+        }
+    }
 }

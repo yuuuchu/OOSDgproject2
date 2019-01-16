@@ -46,15 +46,12 @@
             this.lblViewPackages = new System.Windows.Forms.Label();
             this.lstPackageProducts = new System.Windows.Forms.ListBox();
             this.lblPackages = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // label1
-            // 
+            //
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Khaki;
@@ -63,9 +60,9 @@
             this.label1.Size = new System.Drawing.Size(107, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Search : ";
-            // 
+            //
             // groupBox1
-            // 
+            //
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -82,18 +79,18 @@
             this.groupBox1.Size = new System.Drawing.Size(794, 454);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            // 
+            //
             // richTextBox1
-            // 
+            //
             this.richTextBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.richTextBox1.Location = new System.Drawing.Point(417, 105);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(342, 158);
             this.richTextBox1.TabIndex = 19;
             this.richTextBox1.Text = "";
-            // 
+            //
             // button2
-            // 
+            //
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(220, 381);
@@ -103,9 +100,9 @@
             this.button2.Text = "Exit Program";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
+            //
             // btnBack
-            // 
+            //
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(20, 381);
@@ -115,9 +112,9 @@
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
+            //
             // groupBox2
-            // 
+            //
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.dateTimePicker2);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
@@ -135,9 +132,9 @@
             this.groupBox2.Size = new System.Drawing.Size(384, 279);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
-            // 
+            //
             // comboBox1
-            // 
+            //
             this.comboBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
@@ -145,9 +142,9 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(253, 32);
             this.comboBox1.TabIndex = 16;
-            // 
+            //
             // btnSearch
-            // 
+            //
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(162, 76);
@@ -156,27 +153,27 @@
             this.btnSearch.TabIndex = 15;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
-            // 
+            //
             // textBox4
-            // 
+            //
             this.textBox4.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(131, 235);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(247, 35);
             this.textBox4.TabIndex = 14;
-            // 
+            //
             // textBox2
-            // 
+            //
             this.textBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(131, 127);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(247, 35);
             this.textBox2.TabIndex = 12;
-            // 
+            //
             // label5
-            // 
+            //
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Khaki;
@@ -185,9 +182,9 @@
             this.label5.Size = new System.Drawing.Size(138, 20);
             this.label5.TabIndex = 11;
             this.label5.Text = "Package Price : ";
-            // 
+            //
             // label2
-            // 
+            //
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Khaki;
@@ -196,9 +193,9 @@
             this.label2.Size = new System.Drawing.Size(108, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Start Date : ";
-            // 
+            //
             // lblPackageName
-            // 
+            //
             this.lblPackageName.AutoSize = true;
             this.lblPackageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPackageName.ForeColor = System.Drawing.Color.Khaki;
@@ -207,9 +204,9 @@
             this.lblPackageName.Size = new System.Drawing.Size(144, 20);
             this.lblPackageName.TabIndex = 7;
             this.lblPackageName.Text = "Package Name : ";
-            // 
+            //
             // lblViewProducts
-            // 
+            //
             this.lblViewProducts.AutoSize = true;
             this.lblViewProducts.BackColor = System.Drawing.Color.Transparent;
             this.lblViewProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -219,9 +216,9 @@
             this.lblViewProducts.Size = new System.Drawing.Size(172, 20);
             this.lblViewProducts.TabIndex = 6;
             this.lblViewProducts.Text = "Products in package";
-            // 
+            //
             // lblViewPackages
-            // 
+            //
             this.lblViewPackages.AutoSize = true;
             this.lblViewPackages.BackColor = System.Drawing.Color.Transparent;
             this.lblViewPackages.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -231,9 +228,9 @@
             this.lblViewPackages.Size = new System.Drawing.Size(100, 20);
             this.lblViewPackages.TabIndex = 5;
             this.lblViewPackages.Text = "Description";
-            // 
+            //
             // lstPackageProducts
-            // 
+            //
             this.lstPackageProducts.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lstPackageProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstPackageProducts.FormattingEnabled = true;
@@ -242,9 +239,9 @@
             this.lstPackageProducts.Name = "lstPackageProducts";
             this.lstPackageProducts.Size = new System.Drawing.Size(342, 116);
             this.lstPackageProducts.TabIndex = 4;
-            // 
+            //
             // lblPackages
-            // 
+            //
             this.lblPackages.AutoSize = true;
             this.lblPackages.BackColor = System.Drawing.Color.Transparent;
             this.lblPackages.Font = new System.Drawing.Font("Calisto MT", 27.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -254,9 +251,9 @@
             this.lblPackages.Size = new System.Drawing.Size(162, 42);
             this.lblPackages.TabIndex = 3;
             this.lblPackages.Text = "Packages";
-            // 
+            //
             // label3
-            // 
+            //
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Khaki;
@@ -265,23 +262,23 @@
             this.label3.Size = new System.Drawing.Size(100, 20);
             this.label3.TabIndex = 17;
             this.label3.Text = "End Date : ";
-            // 
+            //
             // dateTimePicker1
-            // 
+            //
             this.dateTimePicker1.Location = new System.Drawing.Point(129, 176);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(248, 20);
             this.dateTimePicker1.TabIndex = 18;
-            // 
+            //
             // dateTimePicker2
-            // 
+            //
             this.dateTimePicker2.Location = new System.Drawing.Point(129, 207);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(248, 20);
             this.dateTimePicker2.TabIndex = 19;
-            // 
+            //
             // ViewPackages
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;

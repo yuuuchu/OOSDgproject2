@@ -116,5 +116,10 @@ namespace ThreadedProject2 {
 			CallbackForm(this);
 			
 		}
-	}
+
+        private void ConnectionSetup_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
