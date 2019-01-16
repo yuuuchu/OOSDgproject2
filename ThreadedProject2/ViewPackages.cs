@@ -8,6 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/**
+ * Project: OOSD Threaded Project 2
+ * 
+* ViewPackages Form with navigation buttons. This page is for displaying package information for
+* easier read and access
+* 
+* Author: Eugenia Chiu
+* Date: Jan 2019
+* Commenter: Eugenia Chiu
+*/
+
 namespace ThreadedProject2
 {
     public partial class ViewPackages : Form

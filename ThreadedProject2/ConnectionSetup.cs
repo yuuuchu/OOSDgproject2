@@ -20,11 +20,9 @@ Hayden Belanger
 namespace ThreadedProject2 {
 	public partial class ConnectionSetup : Form {
 
-		//Stores value for connection use elsewhere.
-		public static string ConnectionString = null;
 
 		//Path for saved ConnectionString. %AppData%/NCC/bin/NorthCustomerConfigurator.dat
-		public static string DataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TravelExperts\\bin\\NorthCustomerConfigurator.dat");
+		public static string DataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TravelExperts\\bin\\TravelExperts.dat");
 		private string Instvalue = "";
 		private string Usrvalue = "";
 		private Action<Form> CallbackForm;
@@ -107,11 +105,11 @@ namespace ThreadedProject2 {
 				}
 			}
 
-
-			ConnectionString = builder.ConnectionString;
+			ConnectionString.Connection = new ConnectionString(builder.ConnectionString);
+			
 
 			//If checked, serializes the connection string to a file.
-			Utilities.SerializeObject(ConnectionString, DataPath);
+			Utilities.SerializeObject(ConnectionString.Connection, DataPath);
 
 			//Hides this window, opens main window, and adds event to other window to close this window when that window is also closed.
 

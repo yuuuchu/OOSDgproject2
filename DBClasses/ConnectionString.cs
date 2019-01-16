@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ThreadedProject2 
+namespace ThreadedProject2
 {
     [Serializable]
     public class ConnectionString
@@ -26,6 +26,3 @@ namespace ThreadedProject2
         }
     }
 }
-
-
-

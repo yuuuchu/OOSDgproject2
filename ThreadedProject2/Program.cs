@@ -27,11 +27,11 @@ namespace ThreadedProject2
 				//If the program can find a serialized ConnectionString, tries to use it. If it either
 				//fails to find a serialized connection string or can't connect to the database using it, will direct to
 				//the setup window. Otherwise, is directed to the main window.
-				string precs = Utilities.DeserializeObject<string>(ConnectionSetup.DataPath);
-				using (SqlConnection con = new SqlConnection(precs)) {
+				ConnectionString precs = Utilities.DeserializeObject<ConnectionString>(ConnectionSetup.DataPath);
+				using (SqlConnection con = new SqlConnection(precs.Value())) {
 					try {
 						con.Open();
-						ConnectionSetup.ConnectionString = precs;
+						ConnectionString.Connection = precs;
 
 					} catch (SqlException e) {
 						MessageBox.Show("Error while connecting to SQL:\n" + e.Message, "Connection Error");
@@ -50,6 +50,7 @@ namespace ThreadedProject2
 				return;
 			}
 
+			InitializeForms();
 			Application.Run(new MainMenu());
 
 
@@ -57,11 +58,18 @@ namespace ThreadedProject2
 
 		public static void LaunchProgram(Form f) {
 
+			InitializeForms();
 			f.Hide();
 			Form f2 = new MainMenu();
 			f2.FormClosed += (s, args) => f.Close();
 			f2.Show();
 
+		}
+
+		public static void InitializeForms() {
+
+			SuppliersDB.InitializeList();
+			ProductsDB.InitializeList();
 		}
 	}
 }
