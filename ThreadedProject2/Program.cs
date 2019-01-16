@@ -50,6 +50,7 @@ namespace ThreadedProject2
 				return;
 			}
 
+			InitializeForms();
 			Application.Run(new MainMenu());
 
 
@@ -57,11 +58,18 @@ namespace ThreadedProject2
 
 		public static void LaunchProgram(Form f) {
 
+			InitializeForms();
 			f.Hide();
 			Form f2 = new MainMenu();
 			f2.FormClosed += (s, args) => f.Close();
 			f2.Show();
 
+		}
+
+		public static void InitializeForms() {
+
+			SuppliersDB.InitializeList();
+			ProductsDB.InitializeList();
 		}
 	}
 }
