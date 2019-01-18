@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 * Package class with getters and setters
 * Author: Hayden Belanger + Brandon Ezekiel
 * Date: Jan 2019
-* Commenter: Eugenia Chiu
+* Commenter: Eugenia Chiu and Hayden Belanger
 */
 
 namespace DBClasses {
@@ -17,7 +17,10 @@ namespace DBClasses {
     //Make package class
 	public class Package {
 
-        //Default empty constructor for class
+        /// <summary>
+		/// Constructs property-based package. Empty constructor, as the data points should
+		/// be set with getters and setters.
+		/// </summary>
 		public Package() {
 			
 		}

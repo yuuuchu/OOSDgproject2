@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ThreadedProject2;
 
 /**
  * Project: OOSD Threaded Project 2
@@ -15,19 +16,28 @@ using System.Windows.Forms;
 * 
 * Author: Hayden Belanger
 * Date: Jan 2019
-* Commenter: Eugenia Chiu
+* Commenter: Eugenia Chiu and Hayden Belanger
 */
 
 namespace DBClasses {
 	public class SuppliersDB {
 
-        //Create empty list and set up Data Binding Source
-        public static BindingList<KeyValuePair<string, int>> Suppliers = new BindingList<KeyValuePair<string, int>>();
+		/// <summary>
+		/// This is the actual list of all suppliers. Add, change, or remove items from this to have it update
+		/// in all connected Data end points.
+		/// </summary>
+		public static BindingList<KeyValuePair<string, int>> Suppliers = new BindingList<KeyValuePair<string, int>>();
+		/// <summary>
+		/// This is the Binding Source. To add or remove data from the list, reference Suppliers BindingList instead.
+		/// Reference this as the DataSource in GUI elements like ComboBox to auto-construct the dropdown and modify
+		/// it on the fly.
+		/// </summary>
 		public static BindingSource SuppliersBindingSource = new BindingSource();
 
-        //Create the list and add values from database to list
-        //InitializeList is just a variablename.
-        public static void InitializeList() {
+		/// <summary>
+		/// Repeatable use static method that will either populate or reset the Suppliers list.
+		/// </summary>
+		public static void InitializeList() {
 
             //Establish and open the connection to database using connection string
             using (SqlConnection con = new SqlConnection(ConnectionString.Connection.Value())) {

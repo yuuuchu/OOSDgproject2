@@ -5,14 +5,15 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DBClasses;
 
 /**
  * Project: OOSD Threaded Project 2
-* (Code description goes here)
+* Object class for building Packages objects and getting a list of such.
 * 
 * Author: Brandon Ezekiel
 * Date: Jan 2019
-* Commenter: 
+* Commenter: Hayden Belanger
 */
 
 namespace ThreadedProject2
@@ -20,15 +21,15 @@ namespace ThreadedProject2
 
     public class PackagesDB
     {
-        public static string connectionString = ConnectionSetup.ConnectionString;
+        public static string connectionString = ConnectionString.Connection.Value();
 
-        public static Packages GetPackages(int packID)
+        public static Package GetPackages(int packID)
         {
 
-            List<Packages> pack = new List<Packages>();
-            Packages p;
+            List<Package> pack = new List<Package>();
+            Package p;
             SqlConnection con = new SqlConnection(ConnectionString.Connection.Value());
-            string query = "SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, PkgDesc " + "FROM Packages " + "WHERE PackageId = @PackageId";
+            string query = "SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, PkgDesc FROM Packages WHERE PackageId = @PackageId";
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@PackageId", packID);
             try
@@ -37,7 +38,7 @@ namespace ThreadedProject2
                 SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SingleRow);
                 if (reader.Read())
                 {
-                    p = new Packages();
+                    p = new Package();
                     p.PackageId = (int)reader["PackageId"];
                     p.PkgName = reader["PkgName"].ToString();
                     p.PkgStartDate = (DateTime)reader["PkgStartDate"];

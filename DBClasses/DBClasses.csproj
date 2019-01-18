@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,7 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ConnectionSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionSetup.designer.cs">
+      <DependentUpon>ConnectionSetup.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConnectionString.cs" />
     <Compile Include="Package.cs" />
     <Compile Include="PackagesDB.cs" />
@@ -50,6 +56,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuppliersDB.cs" />
     <Compile Include="Utilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ConnectionSetup.resx">
+      <DependentUpon>ConnectionSetup.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
