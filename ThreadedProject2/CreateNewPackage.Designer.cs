@@ -37,7 +37,7 @@
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.btnRemove = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+			this.fieldDesc = new System.Windows.Forms.RichTextBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.btnCreatePackage = new System.Windows.Forms.Button();
 			this.numAgentComm = new System.Windows.Forms.NumericUpDown();
@@ -138,11 +138,12 @@
 			this.btnRemove.TabIndex = 21;
 			this.btnRemove.Text = "<<";
 			this.btnRemove.UseVisualStyleBackColor = false;
+			this.btnRemove.Click += new System.EventHandler(this.BtnRemoveSelected);
 			// 
 			// groupBox2
 			// 
 			this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-			this.groupBox2.Controls.Add(this.richTextBox1);
+			this.groupBox2.Controls.Add(this.fieldDesc);
 			this.groupBox2.Controls.Add(this.label7);
 			this.groupBox2.Controls.Add(this.btnCreatePackage);
 			this.groupBox2.Controls.Add(this.numAgentComm);
@@ -163,14 +164,15 @@
 			this.groupBox2.TabIndex = 22;
 			this.groupBox2.TabStop = false;
 			// 
-			// richTextBox1
+			// fieldDesc
 			// 
-			this.richTextBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.richTextBox1.Location = new System.Drawing.Point(5, 321);
-			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.Size = new System.Drawing.Size(497, 110);
-			this.richTextBox1.TabIndex = 24;
-			this.richTextBox1.Text = "";
+			this.fieldDesc.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.fieldDesc.Location = new System.Drawing.Point(5, 321);
+			this.fieldDesc.Name = "fieldDesc";
+			this.fieldDesc.Size = new System.Drawing.Size(497, 110);
+			this.fieldDesc.TabIndex = 24;
+			this.fieldDesc.Text = "Package Description";
+			this.fieldDesc.TextChanged += new System.EventHandler(this.FChangeValue);
 			// 
 			// label7
 			// 
@@ -193,22 +195,55 @@
 			this.btnCreatePackage.TabIndex = 22;
 			this.btnCreatePackage.Text = "Create Package";
 			this.btnCreatePackage.UseVisualStyleBackColor = false;
+			this.btnCreatePackage.Click += new System.EventHandler(this.BtnCreate);
 			// 
 			// numAgentComm
 			// 
 			this.numAgentComm.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.numAgentComm.DecimalPlaces = 2;
 			this.numAgentComm.Location = new System.Drawing.Point(270, 273);
+			this.numAgentComm.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+			this.numAgentComm.Minimum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
 			this.numAgentComm.Name = "numAgentComm";
 			this.numAgentComm.Size = new System.Drawing.Size(215, 20);
 			this.numAgentComm.TabIndex = 19;
+			this.numAgentComm.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
 			// 
 			// numBasePrice
 			// 
 			this.numBasePrice.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.numBasePrice.DecimalPlaces = 2;
 			this.numBasePrice.Location = new System.Drawing.Point(272, 225);
+			this.numBasePrice.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+			this.numBasePrice.Minimum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
 			this.numBasePrice.Name = "numBasePrice";
 			this.numBasePrice.Size = new System.Drawing.Size(215, 20);
 			this.numBasePrice.TabIndex = 18;
+			this.numBasePrice.Value = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
 			// 
 			// DTPackageEnd
 			// 
@@ -217,6 +252,7 @@
 			this.DTPackageEnd.Name = "DTPackageEnd";
 			this.DTPackageEnd.Size = new System.Drawing.Size(215, 20);
 			this.DTPackageEnd.TabIndex = 17;
+			this.DTPackageEnd.ValueChanged += new System.EventHandler(this.ChangeDTPs);
 			// 
 			// DTPackageStart
 			// 
@@ -225,6 +261,7 @@
 			this.DTPackageStart.Name = "DTPackageStart";
 			this.DTPackageStart.Size = new System.Drawing.Size(215, 20);
 			this.DTPackageStart.TabIndex = 16;
+			this.DTPackageStart.ValueChanged += new System.EventHandler(this.ChangeDTPs);
 			// 
 			// txtPackageName
 			// 
@@ -233,6 +270,8 @@
 			this.txtPackageName.Name = "txtPackageName";
 			this.txtPackageName.Size = new System.Drawing.Size(218, 20);
 			this.txtPackageName.TabIndex = 11;
+			this.txtPackageName.Text = "Package Name";
+			this.txtPackageName.TextChanged += new System.EventHandler(this.FChangeValue);
 			// 
 			// label6
 			// 
@@ -308,6 +347,7 @@
 			this.lstPackageProducts.Name = "lstPackageProducts";
 			this.lstPackageProducts.Size = new System.Drawing.Size(248, 238);
 			this.lstPackageProducts.TabIndex = 0;
+			this.lstPackageProducts.DoubleClick += new System.EventHandler(this.BtnRemoveSelected);
 			// 
 			// btnBack
 			// 
@@ -353,7 +393,6 @@
 			this.MaximizeBox = false;
 			this.Name = "CreateNewPackage";
 			this.Text = "CreateNewPackage";
-			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MoveItem);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
@@ -388,7 +427,7 @@
         private System.Windows.Forms.DateTimePicker DTPackageStart;
         private System.Windows.Forms.TextBox txtPackageName;
         private System.Windows.Forms.Button btnCreatePackage;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox fieldDesc;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnMainMenu;

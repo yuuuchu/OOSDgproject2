@@ -38,7 +38,16 @@ namespace ThreadedProject2
         {
             //Initialize form load and data
             InitializeComponent();
-            
+
+
+			btnRemove.BackColor = ColorDisabled;
+			btnRemove.Enabled = false;
+
+			btnCreatePackage.Enabled = false;
+			btnCreatePackage.BackColor = ColorDisabled;
+
+			DTPackageStart.Value = DateTime.Today;
+			DTPackageEnd.Value = DTPackageStart.Value.AddDays(5);
             //Display Key and Values in appropriate places on GUI
 			comboBoxProducts.ValueMember = "Value";
 			comboBoxProducts.DisplayMember = "Key";
@@ -142,39 +151,96 @@ namespace ThreadedProject2
 					}
 				}
 
+				if (btnRemove.Enabled == false) {
+					btnRemove.Enabled = true;
+					btnRemove.BackColor = ColorEnabled;
+				}
+
 				if (SelectedList.Count == 5) {
 					btnAdd.Enabled = false;
 					btnAdd.BackColor = ColorDisabled;
 				}
+
+				if(SelectedList.Count > 0) {
+					btnCreatePackage.Enabled = true;
+					btnCreatePackage.BackColor = ColorEnabled;
+				}
 			}
 
 			
 			
 		}
 
-		public static Control FindFocusedControl(Control control) {
-			var container = control as IContainerControl;
-			while (container != null) {
-				control = container.ActiveControl;
-				container = control as IContainerControl;
-			}
-			return control;
-		}
-
-		private void MoveItem(object sender, KeyEventArgs e) {
-			if (e.KeyCode == Keys.Right) {
-				if(btnAdd.Enabled == true) {
-					if (lstSuppliers.SelectedIndex != -1) {
-						BtnAddSelected(null, null);
-						int xI = lstSuppliers.SelectedIndex;
-						xI--;
-						if (xI >= -1) {
-							lstSuppliers.SelectedIndex -= 1;
+		private void BtnRemoveSelected(object sender, EventArgs e) {
+			if (btnRemove.Enabled == true) {
+				if (lstPackageProducts.SelectedValue != null) {
+					KeyValuePair<string, int> val = DummyVal;
+					foreach (KeyValuePair<string, int> v in SelectedList) {
+						if (v.Value == (int)lstPackageProducts.SelectedValue) {
+							val = v;
+							break;
 						}
 					}
+
+					if (val.Value != -999) {
+						SelectedList.Remove(val);
+
+						string cat = val.Key.Split('-')[0].Trim();
+						string v = val.Key.Split('-')[1].Trim();
+						KeyValuePair<string, int> xa = (KeyValuePair<string, int>)comboBoxProducts.SelectedItem;
+						if (cat == xa.Key) {
+							KeyValuePair<string, int> nval = new KeyValuePair<string, int>(v, val.Value);
+							FilteredList.Add(nval);
+						}
+
+						
+						
+					}
 				}
-				
+
+				if(btnAdd.Enabled == false) {
+					btnAdd.Enabled = true;
+					btnAdd.BackColor = ColorEnabled;
+				}
+				if (SelectedList.Count == 0) {
+					btnRemove.Enabled = false;
+					btnRemove.BackColor = ColorDisabled;
+
+					btnCreatePackage.Enabled = false;
+					btnCreatePackage.BackColor = ColorDisabled;
+				}
+
+
 			}
+		}
+
+		private void ChangeDTPs(object sender, EventArgs e) {
+
+			if(DTPackageEnd.Value < DTPackageStart.Value) {
+				DTPackageEnd.Value = DTPackageStart.Value.AddDays(1);
+			}
+		}
+
+		private void FChangeValue(object sender, EventArgs e) {
+
+			if(fieldDesc.Text.Length > 50) {
+				fieldDesc.Text = fieldDesc.Text.Substring(0, 50);
+			}
+
+			if(txtPackageName.Text.Length > 50) {
+				txtPackageName.Text = txtPackageName.Text.Substring(0, 50);
+			}
+		}
+
+		private void BtnCreate(object sender, EventArgs e) {
+
+			List<int> valsOnly = new List<int>();
+			foreach(KeyValuePair<string, int> v in SelectedList) {
+				valsOnly.Add(v.Value);
+			}
+			PackagesDB.AddPackage(txtPackageName.Text, DTPackageStart.Value, DTPackageEnd.Value, fieldDesc.Text, numBasePrice.Value, numAgentComm.Value, valsOnly.ToArray());
+
+			MessageBox.Show("Created new package: \"" + txtPackageName.Text + "\"", "Success");
 		}
 	}
 }
