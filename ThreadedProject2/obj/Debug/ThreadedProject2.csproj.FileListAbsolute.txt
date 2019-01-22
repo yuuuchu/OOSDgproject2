@@ -71,3 +71,4 @@ C:\Users\806214\Documents\project2\OOSDgproject2\OOSDgproject2\ThreadedProject2\
 C:\Users\806214\Documents\project2\OOSDgproject2\OOSDgproject2\ThreadedProject2\obj\Debug\ThreadedProject2.csproj.CoreCompileInputs.cache
 C:\Users\806214\Documents\project2\OOSDgproject2\OOSDgproject2\ThreadedProject2\obj\Debug\ThreadedProject2.exe
 C:\Users\806214\Documents\project2\OOSDgproject2\OOSDgproject2\ThreadedProject2\obj\Debug\ThreadedProject2.pdb
+C:\Users\807777\Documents\GitHub\OOSDgproject2\ThreadedProject2\obj\Debug\ThreadedProject2.AddSuppliers.resources
