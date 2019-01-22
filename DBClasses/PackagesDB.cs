@@ -13,7 +13,7 @@ using DBClasses;
 * 
 * Author: Brandon Ezekiel, Hayden Belanger
 * Date: Jan 2019
-* Commenter: Hayden Belanger
+* Commenter: Hayden Belanger and Eugenia Chiu
 */
 
 namespace ThreadedProject2
@@ -21,8 +21,10 @@ namespace ThreadedProject2
 
     public class PackagesDB
     {
+        //Establish connection string
         public static string connectionString = ConnectionString.Connection.Value();
 
+        //getPackages, pass in packageID to retrieve
         public static Package GetPackages(int packID)
         {
 
