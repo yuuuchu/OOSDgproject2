@@ -32,7 +32,6 @@
             this.btnViewPackages = new System.Windows.Forms.Button();
             this.btnAddPackages = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -81,22 +80,6 @@
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Travel Experts";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderSize = 5;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(167)))), ((int)(((byte)(25)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(468, 271);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(251, 124);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Add New Supplier";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
@@ -118,7 +101,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(796, 497);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnAddPackages);
             this.Controls.Add(this.btnViewPackages);
@@ -137,7 +119,6 @@
         private System.Windows.Forms.Button btnViewPackages;
         private System.Windows.Forms.Button btnAddPackages;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }
 }
