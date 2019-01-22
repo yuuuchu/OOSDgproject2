@@ -52,12 +52,6 @@
     <Compile Include="AddSuppliers.Designer.cs">
       <DependentUpon>AddSuppliers.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConnectionSetup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConnectionSetup.designer.cs">
-      <DependentUpon>ConnectionSetup.cs</DependentUpon>
-    </Compile>
     <Compile Include="CreateNewPackage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,9 +81,6 @@
     <EmbeddedResource Include="AddSuppliers.resx">
       <DependentUpon>AddSuppliers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConnectionSetup.resx">
-      <DependentUpon>ConnectionSetup.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CreateNewPackage.resx">
       <DependentUpon>CreateNewPackage.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +103,7 @@
     <EmbeddedResource Include="ViewSuppliers.resx">
       <DependentUpon>ViewSuppliers.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

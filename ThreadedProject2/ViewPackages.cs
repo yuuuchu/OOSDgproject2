@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,7 @@ namespace ThreadedProject2
             InitializeComponent();
         }
 
-        private Packages packages;
+        private Package packages;
 
         private void GetPackages(int packID)
         {

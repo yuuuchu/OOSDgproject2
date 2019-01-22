@@ -11,11 +11,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-/*
-OOSD Threaded Project 2: ThreadedProject2.ConnectionSetup
-Class that tools a user's environment to allow connection to a database.
-Adapted from Hayden Belanger's Lab3.
-Hayden Belanger
+/**
+ * Project: OOSD Threaded Project 2
+* Connection GUI Class used to build an end user's connection string for them,
+* taking out most of the guesswork. Imported and modified from Hayden's C# Lab 3.
+* Author: Hayden Belanger
+* Date: Jan 2019
+* Commenter: Hayden Belanger
 */
 namespace ThreadedProject2 {
 	public partial class ConnectionSetup : Form {
@@ -105,6 +107,7 @@ namespace ThreadedProject2 {
 				}
 			}
 
+			Console.WriteLine(builder.ConnectionString);
 			ConnectionString.Connection = new ConnectionString(builder.ConnectionString);
 			
 
@@ -116,10 +119,5 @@ namespace ThreadedProject2 {
 			CallbackForm(this);
 			
 		}
-
-        private void ConnectionSetup_Load(object sender, EventArgs e)
-        {
-
-        }
-    }
+	}
 }

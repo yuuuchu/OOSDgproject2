@@ -15,7 +15,7 @@ using System.Windows.Forms;
 * 
 * Author: Hayden Belanger
 * Date: Jan 2019
-* Commenter: Eugenia Chiu
+* Commenter: Eugenia Chiu and Hayden Belanger
 */
 
 namespace DBClasses {
@@ -23,15 +23,26 @@ namespace DBClasses {
     //public class Products DB
 	public class ProductsDB {
 
-        //Create empty list and set up Data Binding Source
+        /// <summary>
+		/// This is the actual list of all products. Add, change, or remove items from this to have it update
+		/// in all connected Data end points.
+		/// </summary>
 		public static BindingList<KeyValuePair<string, int>> Products = new BindingList<KeyValuePair<string, int>>();
+		/// <summary>
+		/// This is the Binding Source. To add or remove data from the list, reference Products BindingList instead.
+		/// Reference this as the DataSource in GUI elements like ComboBox to auto-construct the dropdown and modify
+		/// it on the fly.
+		/// </summary>
 		public static BindingSource ProductsBindingSource = new BindingSource();
 
-        //Create the list and add values from database to list
-        //InitializeList is just a variablename.
+        /// <summary>
+		/// Repeatable use static method that will either populate or reset the Products list.
+		/// </summary>
 		public static void InitializeList() {
 
-            //Establish and open the connection to database using connection string
+			//Establish and open the connection to database using connection string
+
+			Products.Clear();
 			using (SqlConnection con = new SqlConnection(ConnectionString.Connection.Value())) {
 				con.Open();
 

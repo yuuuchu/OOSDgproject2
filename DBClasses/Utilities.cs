@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -18,7 +20,12 @@ Hayden Belanger
 namespace DBClasses {
 	public class Utilities {
 
-		//Serializes any SERIALIZABLE object into binary into a file specified.
+		/// <summary>
+		/// Serializes the object given into a binary file at specified destination.
+		/// </summary>
+		/// <param name="obj">Any object that can be serialized. See <see cref="SerializableAttribute"/> for more info.</param>
+		/// <param name="location">The file location you wish to serialize the given file to.</param>
+		/// <exception cref="SerializationException">Thrown when the object given does not have the Serializable attribute.</exception>
 		public static void SerializeObject(object obj, string location) {
 
 			try {
@@ -27,13 +34,21 @@ namespace DBClasses {
 				BinaryFormatter bf = new BinaryFormatter();
 				bf.Serialize(str, obj);
 				str.Close();
-			} catch(Exception e) {
+			} catch (Exception e) {
 				throw e;
 			}
-			
+
 		}
 
-		//Deserializes a file (must have been serialized as type T) from location and returns a specified class instance.
+		/// <summary>
+		/// Deserializes the given file into the provided type.
+		/// </summary>
+		/// <typeparam name="T">The type you wish to deserialize into. This must be the identical type that the file
+		/// was originally serialized as</typeparam>
+		/// <param name="location">The path of the binary file that you wish to deserialize</param>
+		/// <returns>Object of given type from file.</returns>
+		/// <exception cref="FileNotFoundException">Thrown when the given file does not exist.</exception>
+		/// <exception cref="InvalidCastException">Thrown when the file attempted to deserialize does not match type T.</exception>
 		public static T DeserializeObject<T>(string location) where T : class {
 			try {
 				Stream str;

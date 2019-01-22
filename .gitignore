@@ -1,5 +1,5 @@
-.vs/
-ThreadedProject2/bin/
-ThreadedProject2/obj/
-DBClasses/bin/
-DBClasses/obj/
+.vs/*
+ThreadedProject2/bin/*
+ThreadedProject2/obj/*
+DBClasses/bin/*
+DBClasses/obj/*

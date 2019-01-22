@@ -9,19 +9,29 @@ using System.Threading.Tasks;
 * Connection String class to establish connection
 * Author: Hayden Belanger
 * Date: Jan 2019
-* Commenter: Eugenia Chiu
+* Commenter: Eugenia Chiu and Hayden Belanger
 */
 
-namespace ThreadedProject2
+namespace DBClasses
 {
     [Serializable]
     public class ConnectionString
     {
 
-        public static ConnectionString Connection;
+		/// <summary>
+		/// Access to the successful Connection object. Any attempts to reference this before the client successfully connects
+		/// will be met with failure.
+		/// </summary>
+		public static ConnectionString Connection = null;
 
-        private readonly string _cs;
+		//Internal string used to store the raw ConnectionString as it must be stored normally in a non-readonly object.
+        private readonly string _cs = null;
 
+		/// <summary>
+		/// Constructor used to build the globally accessible Connection String object. Upon successful construction,
+		/// this will be written to the Connection public variable in this class.
+		/// </summary>
+		/// <param name="ConnectionString">The raw Connection String, as passed from <see cref="SqlConnectionStringBuilder"/>.</param>
         public ConnectionString(string ConnectionString)
         {
 
