@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ using System.Windows.Forms;
 * ViewPackages Form with navigation buttons. This page is for displaying package information for
 * easier read and access
 * 
-* Author: Eugenia Chiu
+* Author: Eugenia Chiu / Brandon Ezekiel
 * Date: Jan 2019
 * Commenter: Eugenia Chiu
 */
@@ -91,6 +92,33 @@ namespace ThreadedProject2
             //this.GetPackages(packID);
             this.DisplayPackages();
 
+        }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+            int packageID = Convert.ToInt32(comboBox1.Text);
+            this.GetPackages(packageID);
+            this.DisplayPackages();
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedValue != null)
+            {
+                using (SqlConnection con = new SqlConnection(ConnectionString.Connection.Value()))
+                {
+                    con.Open();
+
+                    string sqlCommand = "SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, PkgDesc, PkgBasePrice, PkgAgencyCommission "
+                                        + "FROM Packages " + "WHERE PackageId = @PkgName";
+
+                    using (SqlCommand cmd = new SqlCommand(sqlCommand, con))
+                    {
+                        cmd.Parameters.AddWithValue("@PkgName", comboBox1.SelectedValue);
+
+                    }
+                }
+            }
         }
     }
 }
