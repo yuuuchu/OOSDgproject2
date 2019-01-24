@@ -36,10 +36,10 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtEnd = new System.Windows.Forms.DateTimePicker();
-            this.txtSDate = new System.Windows.Forms.DateTimePicker();
+            this.dtStart = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -86,6 +86,7 @@
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(417, 105);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(342, 158);
@@ -120,10 +121,10 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.dtEnd);
-            this.groupBox2.Controls.Add(this.txtSDate);
+            this.groupBox2.Controls.Add(this.dtStart);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.btnSearch);
+            this.groupBox2.Controls.Add(this.btnEdit);
             this.groupBox2.Controls.Add(this.txtPrice);
             this.groupBox2.Controls.Add(this.txtName);
             this.groupBox2.Controls.Add(this.label5);
@@ -143,12 +144,12 @@
             this.dtEnd.Size = new System.Drawing.Size(233, 20);
             this.dtEnd.TabIndex = 19;
             // 
-            // txtSDate
+            // dtStart
             // 
-            this.txtSDate.Location = new System.Drawing.Point(143, 175);
-            this.txtSDate.Name = "txtSDate";
-            this.txtSDate.Size = new System.Drawing.Size(233, 20);
-            this.txtSDate.TabIndex = 18;
+            this.dtStart.Location = new System.Drawing.Point(143, 175);
+            this.dtStart.Name = "dtStart";
+            this.dtStart.Size = new System.Drawing.Size(233, 20);
+            this.dtStart.TabIndex = 18;
             // 
             // label4
             // 
@@ -172,17 +173,16 @@
             this.comboBox1.TabIndex = 16;
             this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
-            // btnSearch
+            // btnEdit
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(162, 76);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(172, 37);
-            this.btnSearch.TabIndex = 15;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(167)))));
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(162, 76);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(172, 37);
+            this.btnEdit.TabIndex = 15;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
             // txtPrice
             // 
@@ -310,7 +310,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblPackages;
         private System.Windows.Forms.ListBox lstPackageProducts;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label lblViewProducts;
         private System.Windows.Forms.Label lblViewPackages;
         private System.Windows.Forms.TextBox txtPrice;
@@ -328,6 +328,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtEnd;
-        private System.Windows.Forms.DateTimePicker txtSDate;
+        private System.Windows.Forms.DateTimePicker dtStart;
     }
 }

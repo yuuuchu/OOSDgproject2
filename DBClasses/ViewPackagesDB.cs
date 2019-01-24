@@ -12,39 +12,40 @@ using System.Threading.Tasks;
 * ViewPackages Form with navigation buttons. This page is for displaying package information for
 * easier read and access
 * 
-* Author: Eugenia Chiu / Brandon Ezekiel
+* Author: Bradon Ezekiel / Eugenia Chiu
 * Date: Jan 2019
-* Commenter: Eugenia Chiu
+* Commenter: Bradon Ezekiel / Eugenia Chiu
 */
 
 namespace DBClasses
 {
     public static class ViewPackagesDB
     {
-        public static Package GetPackage(int packageID)
+        // method to retrieve package information for the database
+        public static Package GetPackage(string packageName)
         {
-            Package pack = null;
-            SqlConnection con = new SqlConnection(ConnectionString.Connection.Value());
+            Package pack = null; // set object as null
+            SqlConnection con = new SqlConnection(ConnectionString.Connection.Value()); // Connection to database
             string selectStatement = "SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, PkgDesc, PkgBasePrice, PkgAgencyCommission " +
-                                     "FROM Packages " + "WHERE PackageId = @PackageId";
+                                     "FROM Packages " + "WHERE PkgName = @PkgName";
             SqlCommand cmd = new SqlCommand(selectStatement, con);
-            cmd.Parameters.AddWithValue("@PackageId", packageID);
+            cmd.Parameters.AddWithValue("@PkgName", packageName);
 
             try
             {
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SingleRow);
-                if(reader.Read())
+                con.Open(); // open connection
+                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SingleRow); // read single row of data
+                if (reader.Read())
                 {
                     pack = new Package();
-                    pack.PackageId = (int)reader["PackageId"];
+                    pack.PackageId = Convert.ToInt32(reader["PackageId"]);
                     pack.PkgName = reader["PkgName"].ToString();
-                    pack.PkgStartDate = (DateTime)reader["PkgStartDate"];
-                    pack.PkgEndDate = (DateTime)reader["PkgEndDate"];
+                    pack.PkgStartDate = Convert.ToDateTime(reader["PkgStartDate"]);
+                    pack.PkgEndDate = Convert.ToDateTime(reader["PkgEndDate"]);
                     pack.PkgDesc = reader["PkgDesc"].ToString();
-                    pack.PkgBasePrice = (int)reader["PkgBasePrice"];
-                    pack.PkgAgencyCommission = (int)reader["PkgAgencyCommission"];
-                    
+                    pack.PkgBasePrice = Convert.ToInt32(reader["PkgBasePrice"]);
+                    pack.PkgAgencyCommission = Convert.ToInt32(reader["PkgAgencyCommission"]);
+
                 }
             }
             catch (Exception ex)
@@ -55,8 +56,41 @@ namespace DBClasses
             {
                 con.Close();
             }
-            return pack;
+            return pack; // return row of data as pack object
 
+        }
+
+        // method to create list of package names to be used in the combobox
+        public static List<string> GetPackagesName()
+        {
+            
+            List<string> pack = new List<string>(); // new list object - empty
+
+            SqlConnection con = new SqlConnection(ConnectionString.Connection.Value()); // connection to database
+
+            string selectString = "select PackageId, PkgName from Packages " + // sql statement to get information from database
+                                  "order by PkgName";
+            SqlCommand selectCommand = new SqlCommand(selectString, con); 
+
+            try
+            {
+                con.Open(); // open connection
+                SqlDataReader reader = selectCommand.ExecuteReader(); // start reading data
+                while (reader.Read()) // read while there are package names
+                {
+                    pack.Add(reader["PkgName"].ToString()); // adds package name to list pack
+                }
+                reader.Close(); // once name is found stop reading
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close(); // close connection to database
+            }
+            return pack; // returns list of packages name to pack list object
         }
     }
 }
