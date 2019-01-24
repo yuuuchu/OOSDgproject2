@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBClasses;
 
 /**
  * Project: OOSD Threaded Project 2
@@ -49,12 +50,12 @@ namespace ThreadedProject2
         // method to display packages in appropriate fields on form
         private void DisplayPackages()
         {
-            txtName.Text = packages.PkgName;
+     
             dtStart.Text = packages.PkgStartDate.ToString();
             dtEnd.Text = packages.PkgEndDate.ToString();
-            txtPrice.Text = packages.PkgBasePrice.ToString();
+
             richTextBox1.Text = packages.PkgDesc;
-            txtPrice.Text = packages.PkgBasePrice.ToString();
+
 
         }
 
@@ -84,25 +85,25 @@ namespace ThreadedProject2
         // binds package names to the combo box
         private void GetPackages()
         {
-            comboBox1.DataSource = ViewPackagesDB.GetPackagesName(); // gets names from defined method on ViewPackagesDM.cs
+  // gets names from defined method on ViewPackagesDM.cs
 
         }
 
         // changes data displayed when value in combobox changed
-        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if(comboBox1.SelectedValue != null)
-            {
-                Package pack = new Package(); // default constructor
-                pack = ViewPackagesDB.GetPackage(comboBox1.Text);
+        //private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        //{
+        //    if(comboBox1.SelectedValue != null)
+        //    {
+        //        Package pack = new Package(); // default constructor
+        //        pack = ViewPackagesDB.GetPackage(comboBox1.Text);
 
-                txtName.Text = pack.PkgName.ToString();
-                dtStart.Value = pack.PkgStartDate;
-                dtEnd.Value = pack.PkgEndDate;
-                txtPrice.Text = pack.PkgBasePrice.ToString("c");
-                richTextBox1.Text = pack.PkgDesc.ToString();
+        //        txtName.Text = pack.PkgName.ToString();
+        //        dtStart.Value = pack.PkgStartDate;
+        //        dtEnd.Value = pack.PkgEndDate;
+        //        txtPrice.Text = pack.PkgBasePrice.ToString("c");
+        //        richTextBox1.Text = pack.PkgDesc.ToString();
 
-            }
-        }
+        //    }
+        //}
     }
 }
