@@ -41,8 +41,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnEdit = new System.Windows.Forms.Button();
 
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblPackageName = new System.Windows.Forms.Label();
@@ -127,8 +125,6 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.btnEdit);
-            this.groupBox2.Controls.Add(this.txtPrice);
-            this.groupBox2.Controls.Add(this.txtName);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.lblPackageName);
@@ -185,25 +181,6 @@
             this.btnEdit.TabIndex = 15;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
-            //
-            // txtPrice
-            //
-            this.txtPrice.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(143, 235);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(235, 35);
-            this.txtPrice.TabIndex = 14;
-            //
-            // txtName
-            //
-            this.txtName.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(143, 127);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(235, 35);
-            this.txtName.TabIndex = 12;
-            //
             // label5
             //
             this.label5.AutoSize = true;
