@@ -37,7 +37,7 @@ namespace ThreadedProject2
         //Directs to view suppliers page
         private void button1_Click(object sender, EventArgs e)
         {
-			new ViewSuppliers().ShowDialog(this);
+			
         }
 
         //Exit application
