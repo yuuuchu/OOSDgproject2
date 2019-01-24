@@ -47,7 +47,7 @@
             this.btnViewPackages.Name = "btnViewPackages";
             this.btnViewPackages.Size = new System.Drawing.Size(230, 116);
             this.btnViewPackages.TabIndex = 0;
-            this.btnViewPackages.Text = "View Packages";
+            this.btnViewPackages.Text = "View/Edit Packages";
             this.btnViewPackages.UseVisualStyleBackColor = false;
             this.btnViewPackages.Click += new System.EventHandler(this.btnViewPackages_Click);
             // 
